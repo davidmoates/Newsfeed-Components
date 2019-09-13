@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'David Moates',
+    title: 'From Up to Down: A Rags to Riches Story.',
     date: 'Sept 11st, 2019',
     firstParagraph: `Now, this is a story all about how, My life got flipped-turned upside down, And I'd like to take a minute, Just sit right there, I'll tell you how I became the prince of a town called Bel Air, In west Philadelphia born and raised, On the playground was where I spent most of my days, Chillin' out maxin' relaxin' all cool, And all shootin some b-ball outside of the school, When a couple of guys who were up to no good ,Started making trouble in my neighborhood, I got in one little fight and my mom got scared, She said 'You're movin' with your auntie and uncle in Bel Air'`,
 
