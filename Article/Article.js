@@ -37,9 +37,9 @@ const data = [
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
 
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
@@ -66,8 +66,8 @@ const data = [
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
 
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel
+        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
@@ -85,30 +85,94 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'From Up to Down: A Rags to Riches Story.',
+    date: 'Sept 11st, 2019',
+    firstParagraph: `Now, this is a story all about how, My life got flipped-turned upside down, And I'd like to take a minute, Just sit right there, I'll tell you how I became the prince of a town called Bel Air, In west Philadelphia born and raised, On the playground was where I spent most of my days, Chillin' out maxin' relaxin' all cool, And all shootin some b-ball outside of the school, When a couple of guys who were up to no good ,Started making trouble in my neighborhood, I got in one little fight and my mom got scared, She said 'You're movin' with your auntie and uncle in Bel Air'`,
+
+    secondParagraph: `I begged and pleaded with her day after day, But she packed my suit case and sent me on my way, She gave me a kiss and then she gave me my ticket. I put my Walkman on and said, 'I might as well kick it'. First class, yo this is bad, Drinking orange juice out of a champagne glass. Is this what the people of Bel-Air living like? Hmm this might be alright. But wait I hear they're prissy, bourgeois, all that ,Is this the type of place that they just send this cool cat?, I don't think so, I'll see when I get there, I hope they're prepared for the prince of Bel-Air.`,
+
+    thirdParagraph: `Well, the plane landed and when I came out, There was a dude who looked like a cop standing there with my name out, I ain't trying to get arrested yet, I just got here, I sprang with the quickness like lightning, disappeared, I whistled for a cab and when it came near, The license plate said fresh and it had dice in the mirror, If anything I could say that this cab was rare, But I thought 'Nah, forget it' - 'Yo, homes to Bel Air', I pulled up to the house about seven or eigth, And I yelled to the cabbie 'Yo homes smell ya later', I looked at my kingdom, I was finally there, To sit on my throne as the Prince of Bel Air`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+ // Step 1: Create a function that creates a component. You will want your component to look like the template below:
+ //
+ //  <div class="article">
+ //    <h2>{title of the article}</h2>
+ //    <p class="date">{date of the article}</p>
+ //
+ //    {three separate paragraph elements}
+ //
+ //    <span class='expandButton'></span>
+ //  </div>
+ //
+ //  Hint: You will need to use createElement more than once here!
+ //
+ //  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+ //
+ //  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+ //
+ //  Step 3: return the entire component.
+ //
+ //  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+ //
+ //  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
-    {three separate paragraph elements}
 
-    <span class='expandButton'></span>
-  </div>
 
-  Hint: You will need to use createElement more than once here!
+function articleCreater(h2Content, dateContent, p1Content, p2Content, p3content){
+  function divCreater(){
+    const div = document.createElement('div');
+    div.classList.add('article');
+    return div
+  };
+  function header2Creater(content){
+    const header2 = document.createElement('h2');
+    header2.textContent = content;
+    return header2
+  };
+  function paragraphCreater(content, newClass){
+   const paragraph = document.createElement('p');
+   paragraph.textContent = content;
+   paragraph.classList.add(newClass);
+   return paragraph
+ };
+ function spanCreater(){
+   const span = document.createElement('span');
+   span.classList.add('expandButton');
+   span.textContent = 'click to open';
+   span.addEventListener('click', () => {
+     span.textContent = 'Double Click to Close';
+     articleDiv.classList.add('article-open')
+   });
+   span.addEventListener('dblclick', () => {
+     span.textContent = 'click to open';
+     articleDiv.classList.remove('article-open');
+   });
+   return span
+ };
+  const articleDiv = divCreater();
+  const headline = header2Creater(h2Content);
+  const dateP = paragraphCreater(dateContent, 'date');
+  const p1 = paragraphCreater(p1Content, 'contentP');
+  const p2 = paragraphCreater(p2Content, 'contentP');
+  const p3 = paragraphCreater(p3content, 'contentP');
+  const spanButton = spanCreater();
+  const appendToParent = document.querySelector('.articles');
+  articleDiv.appendChild(headline);
+  articleDiv.appendChild(dateP);
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(spanButton);
+  appendToParent.appendChild(articleDiv);
+  const article = `headline` + `dateP` + `p1` + `p2` + `p3` + `spanButton`;
+  return article
+};
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
-*/
+data.map((item) => {
+  let newArticle = articleCreater(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  return newArticle
+});
