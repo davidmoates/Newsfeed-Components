@@ -6,7 +6,8 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
+  'Silly Songs with Larry'
 ];
 
 /*
@@ -52,10 +53,10 @@ function menuCreater(newData){
   const unorderList = ulCreater();
   const img = document.querySelector('.menu-button');
   img.addEventListener('click', () => {
-    img.classList.add('menu--open');
+    menuDiv.classList.add('menu--open');
   });
   img.addEventListener('dblclick', () => {
-    img.classList.remove('menu--open');
+    menuDiv.classList.remove('menu--open');
   });
 
   const appendToMenu = document.querySelector('.header');
@@ -63,10 +64,10 @@ function menuCreater(newData){
   appendToMenu.appendChild(menuDiv);
   for(let i = 0; i < newData.length; i++) {
     let theList = liCreater(newData[i]);
-    unorderList.appendChild([i]);
+    unorderList.appendChild(theList);
   };
 
-  const theMenu = `menuDiv` + `unoderList` + 'theList';
+  const theMenu = `menuDiv` + `unoderList`;
   return theMenu
 };
 menuCreater(menuItems);
