@@ -37,9 +37,9 @@ const data = [
         mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma
         and Parvati Sorting Hat Minister of Magic blue turban remember my last.`,
 
-    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights 
-        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven 
-        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot 
+    thirdParagraph: `Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights
+        Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven
+        roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
@@ -66,8 +66,8 @@ const data = [
         consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nidorino Lorem ipsum dolor
         sit amet, consectetur adipiscing elit. Nidoking Lorem ipsum`,
 
-    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel 
-        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James 
+    thirdParagraph: `Gotta catch 'em all Horsea gym Ninjask Absol Sinnoh Poliwag. Gotta catch 'em all Youngster wants to fight Soda Pop Floatzel
+        Leech Life Seismitoad Ariados. Earthquake Pokemon Glitch City Tail Whip Skitty Ekans Dialga. Ut aliquip ex ea commodo consequat James
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
@@ -88,8 +88,8 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -101,9 +101,63 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+const artC = (h2C, dateC, p1C, p2C, p3C) => {
+  const divC = () => {
+    const div = document.createElement('div');
+    div.classList.add('article');
+    return div
+  };
+  const header2C = (content) => {
+    const header2 = document.createElement('h2');
+    header2.textContent = content;
+    return header2
+  };
+  const paraC = (content, newClass) => {
+    const para = document.createElement('p');
+    para.textContent = content;
+    para.classList.add(newClass);
+    return para
+  };
+  const spanC = () => {
+    const span = document.createElement('span');
+    span.classList.add('expandButton');
+    span.addEventListener('click', () => {
+      artDiv.classList.toggle('article-open');
+    });
+    return span
+  };
+
+  const
+    artDiv = divC();
+    headline = header2C(h2C);
+    dateP = paraC(dateC);
+    p1 = paraC(p1C);
+    p2 = paraC(p2C);
+    p3 = paraC(p3C);
+    spandButton = spanC();
+
+    const app2P = document.querySelector('.articles');
+    artDiv.appendChild(headline);
+    artDiv.appendChild(dateP);
+    artDiv.appendChild(p1);
+    artDiv.appendChild(p2);
+    artDiv.appendChild(p3);
+    artDiv.appendChild(spandButton);
+    app2P.appendChild(artDiv);
+
+    const artFull = `headline` + `dateP` + `p1` + `p2` + `p3` + `spandButton`;
+    return artFull
+};
+
+data.map((item) => {
+  let newArt = artC(item.title, item.data, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  return newArt
+});
+
+
+  /*Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
