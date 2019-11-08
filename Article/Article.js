@@ -123,6 +123,7 @@ const artC = (h2C, dateC, p1C, p2C, p3C) => {
   const spanC = () => {
     const span = document.createElement('span');
     span.classList.add('expandButton');
+    span.textContent = 'Read More';
     span.addEventListener('click', () => {
       artDiv.classList.toggle('article-open');
     });
@@ -137,6 +138,7 @@ const artC = (h2C, dateC, p1C, p2C, p3C) => {
     p2 = paraC(p2C);
     p3 = paraC(p3C);
     spandButton = spanC();
+
 
     const app2P = document.querySelector('.articles');
     artDiv.appendChild(headline);
